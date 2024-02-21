@@ -58,7 +58,7 @@ function TodoList() {
                 value={text}
                 onChange={e => setText(e.target.value)}
                 />
-            <button className="addButton" onClick={() => addTask(text)}>Add</button>
+            <button class="button is-info" onClick={() => addTask(text)}>Add</button>
             </div>
 
             {tasks.map(task => (

@@ -51,7 +51,7 @@ function TodoItem({ task, updateTask, deleteTask, toggleCompleted }) {
             )}
 
             <div className="btn-group">
-                <button onClick={() => editText(task.text)}>Edit</button>
+                <button class="button is-link is-outlined" onClick={() => editText(task.text)}>Edit</button>
                 {isEditing && (
                     <div className="editBox">
                         <input 
@@ -59,11 +59,23 @@ function TodoItem({ task, updateTask, deleteTask, toggleCompleted }) {
                             value={editInputValue}
                             onChange={(e) => setEditInputValue(e.target.value)}
                         />
-                        <button onClick={() => saveText(task.id)}>Save</button>
+                        {/* <button id="saveButton" onClick={() => saveText(task.id)}>Save</button> */}
+                        <button class="button is-success" onClick={() => saveText(task.id)}>
+                            <span class="icon is-small">
+                            <i class="fas fa-check"></i>
+                            </span>
+                            <span>Save</span>
+                        </button>
                     </div>
                 )}
                 
-                <button onClick={() => deleteTask(task.id)}>X</button>
+                {/* <button id="deleteButton" onClick={() => deleteTask(task.id)}>X</button> */}
+                <button id="deleteButton" class="button is-danger is-outlined" onClick={() => deleteTask(task.id)}>
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                    <i class="fas fa-times"></i>
+                    </span>
+                </button>
             </div>
         </div>
     );
